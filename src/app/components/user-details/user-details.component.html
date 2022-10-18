@@ -1,0 +1,11 @@
+<p>user-details works!</p>
+
+<ng-container *ngIf="user$ | async as user">
+    Username: {{user.userName}} <br>
+    Email: {{user.email}} <br>
+    Age: {{user.age}} <br>
+</ng-container>
+
+<h4>Cahnge Username:</h4>
+<app-button-group [buttonValues]="['Alice', 'Hilde', 'Gudrun']" (buttonClick)="updateUsername($event)"></app-button-group>
+<app-button-group [buttonValues]="['Bob', 'Franz', 'Hubert']" (buttonClick)="updateUsername($event)"></app-button-group>

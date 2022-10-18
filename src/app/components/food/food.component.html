@@ -1,0 +1,19 @@
+<p>food works!</p>
+
+<ng-container *ngIf="foodState$ | async as foodState">
+    <ng-container *ngFor="let food of foodState.food">
+        Name: {{food.name}} <br>
+        Calories: {{food.calories}} <br>
+        Price: {{food.price | currency:'EUR' }} 
+        <br>
+        <br>
+    </ng-container>
+
+    <br>
+
+    Promotion: {{foodState.hasUserPromotion}}
+</ng-container>
+
+<br>
+
+<app-button-group [buttonValues]="['Pizza']" (buttonClick)="updatePizza($event)"></app-button-group>
